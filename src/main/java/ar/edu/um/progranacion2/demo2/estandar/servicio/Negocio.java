@@ -1,9 +1,9 @@
 package ar.edu.um.progranacion2.demo2.estandar.servicio;
 
+import ar.edu.um.progranacion2.demo2.estandar.exception.NoMasComidaException;
 import ar.edu.um.progranacion2.demo2.estandar.pojo.Cliente;
 import ar.edu.um.progranacion2.demo2.estandar.pojo.Comida;
 import ar.edu.um.progranacion2.demo2.estandar.pojo.Empleado;
-import liquibase.pro.packaged.E;
 import lombok.Data;
 
 import java.util.ArrayList;
@@ -79,8 +79,13 @@ public class Negocio {
         Comida com = this.obtenerComidaRandom();
         System.out.println("El empleado que atiende es: "+em.toString());
         System.out.println("La opcion seleccionada de comida del menu es: "+com.toString());
-        this.cobro.cobrar(com.getPrecio(), mPago);
-        System.out.println("La comida ha sido entregada");
+        try {
+            this.cobro.cobrar(com.getPrecio(), mPago);
+            System.out.println("La comida ha sido entregada");
+        }catch (NullPointerException e){
+            System.out.println("La comida no pudo ser entregada");
+            System.out.println("Error en el medio de pago");
+        }
         System.out.println(String.format("El cliente %s se ha retirado del local", c));
         System.out.println("--------------------------------------------------------------------------------");
     }

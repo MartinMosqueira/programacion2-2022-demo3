@@ -1,11 +1,10 @@
 package ar.edu.um.progranacion2.demo2.estandar.arranque;
 
+import ar.edu.um.progranacion2.demo2.estandar.exception.StockInicialException;
 import ar.edu.um.progranacion2.demo2.estandar.pojo.Cliente;
 import ar.edu.um.progranacion2.demo2.estandar.pojo.Comida;
 import ar.edu.um.progranacion2.demo2.estandar.pojo.Empleado;
 import ar.edu.um.progranacion2.demo2.estandar.servicio.Negocio;
-import ar.edu.um.progranacion2.demo2.estandar.servicio.StockInicialException;
-import liquibase.pro.packaged.E;
 
 public class Arranque {
     protected Negocio negocio;
@@ -23,7 +22,7 @@ public class Arranque {
         this.negocio.vender(cli2);
         this.negocio.vender(cli1);
         this.negocio.vender(cli2);
-        this.negocio.vender(cli2,"tarjeta");
+        this.negocio.vender(cli2,"tarj");
         this.negocio.vender(cli2,"tarjeta");
         this.negocio.vender(cli1,"efectivo");
         this.negocio.vender(cli1,"efectivo");

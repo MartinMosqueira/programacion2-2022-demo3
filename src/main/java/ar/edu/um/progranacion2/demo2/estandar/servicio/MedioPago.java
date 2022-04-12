@@ -2,8 +2,6 @@ package ar.edu.um.progranacion2.demo2.estandar.servicio;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,10 +47,10 @@ public class MedioPago {
         this.cobrarInterno(monto, tipoPago);
     }
 
-    protected void cobrarInterno(Double monto, TipoPago tipoPago) {
+    protected void cobrarInterno(Double monto, TipoPago tipoPago) throws NullPointerException{
         System.out.println("Vamos a cobrarle al cliente");
-        System.out.println(String.format("Vamos a usar como medio de pago: %s", tipoPago.obtenerNombre()));
-        tipoPago.cobrar(monto);
-        tipoPago.imprimirTicket();
+            System.out.println(String.format("Vamos a usar como medio de pago: %s", tipoPago.obtenerNombre()));
+            tipoPago.cobrar(monto);
+            tipoPago.imprimirTicket();
+        }
     }
-}

@@ -1,8 +1,7 @@
 package ar.edu.um.progranacion2.demo2.estandar.pojo;
 
-import ar.edu.um.progranacion2.demo2.estandar.servicio.NoMasComidaException;
-import ar.edu.um.progranacion2.demo2.estandar.servicio.StockInicialException;
-import lombok.AllArgsConstructor;
+import ar.edu.um.progranacion2.demo2.estandar.exception.NoMasComidaException;
+import ar.edu.um.progranacion2.demo2.estandar.exception.StockInicialException;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
